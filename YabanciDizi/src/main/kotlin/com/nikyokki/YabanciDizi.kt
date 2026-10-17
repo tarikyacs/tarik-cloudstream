@@ -30,7 +30,7 @@ import org.jsoup.Jsoup
 import org.jsoup.nodes.Element
 
 class YabanciDizi : MainAPI() {
-    override var mainUrl = "https://yabancidizi.tv"
+    override var mainUrl = "https://yabancidizi.news"
     override var name = "YabanciDizi"
     override val hasMainPage = true
     override var lang = "tr"
@@ -207,7 +207,7 @@ class YabanciDizi : MainAPI() {
             Log.d("YBD", dataLink)
             if (name.contains("Mac")) {
                 val mac = app.post(
-                    "https://yabancidizi.tv/api/drive/" +
+                    "https://yabancidizi.news/api/drive/" +
                             dataLink.replace("/", "_").replace("+", "-"),
                     referer = "$mainUrl/"
                 ).document
@@ -265,14 +265,14 @@ class YabanciDizi : MainAPI() {
                 }
             } else if (name.contains("VidMoly")) {
                 val mac = app.post(
-                    "https://yabancidizi.tv/api/moly/" +
+                    "https://yabancidizi.news/api/moly/" +
                             dataLink.replace("/", "_").replace("+", "-"), referer = "$mainUrl/"
                 ).document
                 val subFrame = mac.selectFirst("iframe")?.attr("src") ?: return false
                 loadExtractor(subFrame, "${mainUrl}/", subtitleCallback, callback)
             } else if (name.contains("Okru")) {
                 val mac = app.post(
-                    "https://yabancidizi.tv/api/ruplay/" +
+                    "https://yabancidizi.news/api/ruplay/" +
                             dataLink.replace("/", "_").replace("+", "-"), referer = "$mainUrl/"
                 ).document
                 val subFrame = mac.selectFirst("iframe")?.attr("src") ?: return false
