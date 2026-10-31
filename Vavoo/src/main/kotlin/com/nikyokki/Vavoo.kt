@@ -9,7 +9,7 @@ import com.lagradost.cloudstream3.utils.ExtractorLink
 import com.lagradost.cloudstream3.utils.Qualities
 
 class Vavoo() : MainAPI() {
-    override var mainUrl = "https://vavoo.to"
+    override var mainUrl = "https://geil.to"
     override var name = "Vavoo"
     override var lang = "tr"
     override val supportedTypes = setOf(TvType.Live)
@@ -28,7 +28,7 @@ class Vavoo() : MainAPI() {
             "Accept" to "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
             "Accept-Language" to "tr-TR,tr;q=0.9,en-US;q=0.8,en;q=0.7",
             "Connection" to "keep-alive",
-            "Referer" to "https://vavoo.to",
+            "Referer" to "https://geil.to",
             "User-Agent" to "VAVOO/1.0"
         )
 
